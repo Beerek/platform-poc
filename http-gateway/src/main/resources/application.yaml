@@ -1,0 +1,13 @@
+server.port: 9999
+
+zuul.prefix: /api
+
+zuul.routes.test.path: /test/**
+zuul.routes.test.serviceId: test
+
+spring.application.name: zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka/
