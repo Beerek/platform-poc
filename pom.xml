@@ -11,6 +11,7 @@
 
     <modules>
         <module>service-discovery</module>
+        <module>http-gateway</module>
     </modules>
 
 </project>
