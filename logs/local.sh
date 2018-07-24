@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-apt-get update
-apt-get install -y curl
+#apt-get update
+#apt-get install -y curl
 
-curl -fsSL get.docker.com -o get-docker.sh
-sh get-docker.sh
+#curl -fsSL get.docker.com -o get-docker.sh
+#sh get-docker.sh
 
 docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.1
 
@@ -16,4 +16,4 @@ cd ./kibana/
 
 docker build --tag kibana-logs-v1 .
 
-docker run --name kibana --net=es-kibana-bridge -d -p 9000:5601 kibana-logs-v1
+docker run --rm --name kibana --net=es-kibana-bridge -d -p 9000:5601 kibana-logs-v1
