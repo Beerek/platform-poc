@@ -9,8 +9,9 @@ proof of concept
 
 ## TODO:
 1. refactor dockerfiles and bash scripts
-2. scale all services
-3. deploy to AWS / Asure
+2. use docker compose  
+3. scale all services  
+4. deploy to AWS / Asure  
 
 ## How to run locally:
 1. Download and install Docker
