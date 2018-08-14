@@ -12,7 +12,7 @@ docker network create -d bridge es-kibana-bridge
 
 docker run -d --name elastic -p 9200:9200 -p 9300:9300 --network=es-kibana-bridge -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.1
 
-cd ./kibana/
+cd kibana
 
 docker build --tag kibana-logs-v1 .
 
