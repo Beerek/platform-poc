@@ -2,6 +2,10 @@
 
 ./logs/local.sh
 
-./service-discovery/local.sh
+cd ./service-discovery/
+./local.sh
+cd ..
 
-./http-gateway/local.sh
+cd ./http-gateway/
+./local.sh
+cd ..
