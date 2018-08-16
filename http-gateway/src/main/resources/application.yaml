@@ -16,6 +16,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka:8761/eureka/
+          # for Azure
+#      defaultZone: http://104.214.217.241:8761/eureka/
 #      defaultZone: http://localhost:8761/eureka/
 
 logging:

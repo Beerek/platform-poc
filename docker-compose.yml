@@ -1,0 +1,43 @@
+version: '3'
+services:
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - es-kibana-bridge
+  kibana:
+    build:
+      context: ./logs/kibana
+      dockerfile: ./Dockerfile
+    ports:
+      - "9000:5601"
+    depends_on:
+      - elastic
+    networks:
+      - es-kibana-bridge
+  eureka:
+    build:
+      context: ./service-discovery
+      dockerfile: ./Dockerfile
+    ports:
+      - "8761:8761"
+    depends_on:
+      - elastic
+    networks:
+      - es-kibana-bridge
+  gateway:
+    build:
+      context: ./http-gateway
+      dockerfile: ./Dockerfile
+    ports:
+      - "9999:9999"
+    depends_on:
+      - elastic
+    networks:
+      - es-kibana-bridge
+
+networks:
+  es-kibana-bridge:
+    driver: bridge
