@@ -14,9 +14,12 @@ proof of concept
 4. deploy to AWS / Asure  
 
 ## How to run locally:
+##### (Deprecated)
 1. Download and install Docker
 2. Set memory limit for docker to 4+ GB
 3. Run `local-start.sh`
+##### Up-to-date
+1. Run `docker-compose up --build`
 
 ## Default Ports:
 Kibana - `9000`  
